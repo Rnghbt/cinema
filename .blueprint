@@ -1,0 +1,15 @@
+created:
+    - database/factories/MovieFactory.php
+    - database/factories/RatingFactory.php
+    - database/factories/GenreFactory.php
+    - database/migrations/2024_04_23_182020_create_movies_table.php
+    - database/migrations/2024_04_23_182021_create_ratings_table.php
+    - database/migrations/2024_04_23_182022_create_genres_table.php
+    - database/migrations/2024_04_23_182023_create_genre_movie_table.php
+    - app/Models/Movie.php
+    - app/Models/Rating.php
+    - app/Models/Genre.php
+models:
+    Movie: { id: id, title: string, year: int, actors: 'string[]', sinopsis: text, description: text, durasi: text, poster: string, trailer: string, relationships: { hasMany: Ratings, belongsToMany: Genre } }
+    Rating: { id: id, score: decimal, relationships: { belongsTo: 'Movie, User' } }
+    Genre: { id: id, name: string, relationships: { belongsToMany: Movie } }

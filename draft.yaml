@@ -1,0 +1,27 @@
+models:
+  Movie:
+    id
+    title: string
+    year: int
+    actors: string[]
+    sinopsis: text
+    description: text
+    durasi: text
+    poster: string
+    trailer: string
+    relationships:
+      hasMany: Ratings
+      belongsToMany: Genre
+
+  Rating:
+    id
+    score: decimal
+    relationships:
+     belongsTo: Movie, User
+
+  Genre:
+    id
+    name: string
+    relationships:
+     belongsToMany: Movie
+
